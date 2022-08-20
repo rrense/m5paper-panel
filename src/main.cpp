@@ -2,8 +2,8 @@
 #include <WiFi.h>
 #include <ArduinoJson.h>
 #include <HTTPClient.h>
-#include <FS.h>
-#include <LITTLEFS.h>
+#include "FS.h"
+#include <LittleFS.h>
 #include <ezTime.h>
 #include <regex>
 #include "M5PanelWidget.h"
@@ -326,16 +326,16 @@ void setup()
         Serial.println(F("!An error occurred during SPIFFS mounting"));
     }
 
-    Serial.println(F("Inizializing LITTLEFS FS..."));
-    if (LITTLEFS.begin()){
-        Serial.println(F("LITTLEFS mounted correctly."));
+    Serial.println(F("Inizializing LittleFS FS..."));
+    if (LittleFS.begin()){
+        Serial.println(F("LittleFS mounted correctly."));
     }else{
-        Serial.println(F("!An error occurred during LITTLEFS mounting"));
+        Serial.println(F("!An error occurred during LittleFS mounting"));
     }
 
-    // Get all information of LITTLEFS
-    unsigned int totalBytes = LITTLEFS.totalBytes();
-    unsigned int usedBytes = LITTLEFS.usedBytes();
+    // Get all information of LittleFS
+    unsigned int totalBytes = LittleFS.totalBytes();
+    unsigned int usedBytes = LittleFS.usedBytes();
  
     // TODO : Should fail and stop if SPIFFS error
 
@@ -352,7 +352,7 @@ void setup()
     Serial.println();
 
     canvas.createCanvas(160, 540);
-    canvas.loadFont("/FreeSansBold.ttf", LITTLEFS);
+    canvas.loadFont("/FreeSansBold.ttf", LittleFS);
     // TODO : Should fail and stop if font not found
 
     canvas.setTextSize(FONT_SIZE_LABEL);
