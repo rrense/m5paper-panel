@@ -83,6 +83,7 @@ bool httpRequest(String &url,String &response)
     http.useHTTP10(true);
     http.setReuse(false);
     http.begin(url);
+    http.setAuthorization(OPENHAB_TOKEN,"");
     int httpCode = http.GET();
     if (httpCode != HTTP_CODE_OK)
     {
@@ -229,7 +230,7 @@ void parseSubscriptionData(String jsonDataStr)
 void setTimeZone() // Gets timezone from OpenHAB
 {
     String response;
-    if (httpRequest(restUrl + "/services/org.eclipse.smarthome.i18n/config",response))
+    if (httpRequest(restUrl + "/services/org.openhab.i18n/config",response))
     {
         //DynamicJsonDocument doc(2000);
         deserializeJson(jsonDoc, response);
