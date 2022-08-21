@@ -6,9 +6,13 @@
 #define BUTTONS_Y               2       // buttons rows
 #define BUTTON_SIZE             210     // button widht and height
 
-#define FONT_SIZE_LABEL         32 
+#define FONT_SIZE_LABEL         26 
 #define FONT_SIZE_STATUS_CENTER 48
-#define FONT_SIZE_STATUS_BOTTOM 36
+#define FONT_SIZE_STATUS_BOTTOM 32
+#define FONT_SIZE_SYSINFO       24
+// #define FONT_SIZE_LABEL         32 
+// #define FONT_SIZE_STATUS_CENTER 48
+// #define FONT_SIZE_STATUS_BOTTOM 36
 
 class M5PanelWidget
 {

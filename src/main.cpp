@@ -288,7 +288,7 @@ void displaySysInfo()
 
     canvas.drawString(openhabTZ.dateTime("H:i"), 80, 40);
 
-    canvas.setTextSize(FONT_SIZE_LABEL); 
+    canvas.setTextSize(FONT_SIZE_SYSINFO); 
     canvas.setTextDatum(TL_DATUM);
 
     canvas.drawString("Free Heap:",0,250);
@@ -360,6 +360,7 @@ void setup()
     canvas.createRender(FONT_SIZE_LABEL,FONT_CACHE_SIZE);
     canvas.createRender(FONT_SIZE_STATUS_CENTER,FONT_CACHE_SIZE);
     canvas.createRender(FONT_SIZE_STATUS_BOTTOM,FONT_CACHE_SIZE);
+    canvas.createRender(FONT_SIZE_SYSINFO,FONT_CACHE_SIZE);
 
     // Setup Wifi
     Serial.println(F("Starting Wifi"));
