@@ -11,7 +11,7 @@ Actually, it just displays the 6 specified OpenHAB item's Label and Status.
 
 While the is no power optimizations, it can already run several hours on battery.
 
-It has been tested with OpenHAB 2.5 and 3.0
+It has been tested with OpenHAB ~~2.5 and~~ 3.0
 
 ## How to
  - Clone and open in PlatformIO
@@ -20,7 +20,8 @@ It has been tested with OpenHAB 2.5 and 3.0
     - Wifi settings
     - Openhab host and port
     - Sitemap to use (default: m5paper)
- - Upload filesystem image (from PlatformIO menu, or "pio run -t uploadfs")
+ - Upload filesystem image (from PlatformIO menu, or `"pio run -t uploadfs"`)
+   - ** FIX ME ** For now: in `platform.ini` temporarily change `platform = espressif32` to `platform = espressif32@3.0.0`
  - Compile and upload to m5paper
  - Monitor through serial port
 
